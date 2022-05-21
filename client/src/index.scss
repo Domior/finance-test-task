@@ -1,3 +1,14 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --bg-color: #1E243A;
+  --red: #FF2D4D;
+  --green: #00C58C;
+  --yellow: #FED248;
+  --dark-1: #252A42;
+  --dark-1: #343A55;
+}
+
 *,
 *::after,
 *::before {
@@ -8,4 +19,25 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--white)
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.content {
+  margin-top: 40px;
+  padding: 0 25px;
+}
+
+.red {
+  color: var(--red) !important;
+}
+
+.green {
+  color: var(--green) !important;
 }
