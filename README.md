@@ -5,15 +5,17 @@
 
 We need you to implement a solution to display price tickers data on the UI in realtime.
 
-Price data is available from a locally running service (see information below). Any additional visualisations to indicate how prices have changed would be a plus. Testing is also an important part to this exercise.
+Price data is available from a locally running service (see information below). Any additional visualizations to indicate how prices have changed would be a plus. Testing is also an important part to this exercise.
 
 Requirements:
+
 - application should connect to the locally running service
 - application should render price changes for some tickers in real time
 
 You can get some ideas how your application may look like on the [Google Finance](https://www.google.com/finance/) page.
 
 As a bonus you can implement (please describe implemented bonus functionality in this file):
+
 - any additional visual effects to highlight positive or negative changes in the prices
 - the possibility to switch on/off tickers by user
 - the possibility to specify interval time by user
@@ -21,6 +23,7 @@ As a bonus you can implement (please describe implemented bonus functionality in
 - any additional functionality you consider useful
 
 You should use the next technologies:
+
 - React (preferable with hooks)
 - Redux (with Redux-Thunk or any other Redux middleware you are familiar) or any other state-manager library you want
 - Socket.io - to connect to the service
@@ -28,6 +31,7 @@ You should use the next technologies:
 - Testing Library
 
 We will assess the next parts:
+
 - workability: how your application works
 - projects structure: how you structure your files
 - code quality: how you write clean, readable code (feel free to install and use ESLint and Prettier)
@@ -35,6 +39,7 @@ We will assess the next parts:
 - testing: how you can test your code
 
 ## Running the local service
+
 1. Open a new bash shell
 2. ```cd server```
 3. ```npm install``` or ```yarn install```
@@ -42,12 +47,14 @@ We will assess the next parts:
 5. You can visit [http://localhost:4000](http://localhost:4000) to check that the service is working correctly and inspect the data it produces.
 
 ## Run your application
+
 1. Open a new bash shell
 2. ```cd client```
 3. ```npm install``` or ```yarn install```
 4. ```npm run start``` or ```yarn start```
 
 ## Run the tests
+
 1. Open a new bash shell
 2. ```cd client```
 3. ```npm run test``` or ```yarn test```
@@ -60,6 +67,7 @@ URL:
 Price tickers are real-time via web-sockets.
 
 ## Example JSON Response from the Price Ticker service
+
 ```json
 [
   {
@@ -81,6 +89,7 @@ Price tickers are real-time via web-sockets.
 ```
 
 The tickers we use:
+
 - **AAPL** - Apple
 - **GOOGL** - Alphabet
 - **MSFT** - Microsoft
@@ -89,6 +98,7 @@ The tickers we use:
 - **TSLA** - Tesla
 
 ## How to complete the task
+
 1. Clone or fork this repository
 2. Modify content of the folder `client`
 3. Modify content of the folder `server` - if you want to complete bonus tasks
