@@ -3,13 +3,19 @@ import { Link } from 'react-router-dom';
 
 import styles from './Header.module.scss';
 
-export const Header = () => {
+const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <Link to="/">Dashboard </Link>
+        <Link data-testid="home-link" to="/">
+          Dashboard
+        </Link>
+        <Link data-testid="favorites-link" to="/favorites">
+          Favorites
+        </Link>
       </nav>
-      <Link to="/">Log In</Link>
     </header>
   );
 };
+
+export default Header;

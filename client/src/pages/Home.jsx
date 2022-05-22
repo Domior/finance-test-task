@@ -1,26 +1,14 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-import { useDispatch } from 'react-redux';
+import Dashboard from '../components/Dashboard';
 
-import { socket } from '../services/socket-api';
-import { fetchTickers } from '../redux/actions/tickersAction';
-
-import { TickersDashboard } from '../components';
-
-const Home = () => {
-  const dispatch = useDispatch();
-
-  React.useEffect(() => {
-    socket.emit('start');
-    dispatch(fetchTickers(socket));
-    return socket.disconnect;
-  }, [dispatch]);
+export const Home = () => {
+  const tickers = useSelector(({ tickers }) => tickers.items);
 
   return (
-    <>
-      <TickersDashboard />
-    </>
+    <div data-testid="home-page">
+      <Dashboard items={tickers} />
+    </div>
   );
 };
-
-export default Home;
