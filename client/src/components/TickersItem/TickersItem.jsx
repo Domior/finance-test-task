@@ -1,5 +1,5 @@
 import React from 'react';
-import { socket } from '../../services/socket-api';
+
 import {
   ArrowUpOutlined,
   ArrowDownOutlined,
@@ -9,9 +9,9 @@ import {
 
 import { setColorIndicator } from '../../utils/utils';
 
-const TickersItem = ({ ticker }) => {
-  const onAddToFavorites = item => () => {
-    socket.emit(item.is_favorite ? 'remove-favorite' : 'add-favorite', item.ticker);
+const TickersItem = ({ ticker, onAddToFavorites }) => {
+  const handleOnAddToFavorites = () => {
+    onAddToFavorites(ticker);
   };
 
   const setChange = price => {
@@ -21,14 +21,14 @@ const TickersItem = ({ ticker }) => {
       </>
     ) : (
       <>
-        {price.substring(1)}
+        {price?.substring(1)}
         <ArrowDownOutlined />
       </>
     );
   };
 
   return (
-    <tr>
+    <tr data-testid="ticker-row">
       <td>{ticker.ticker}</td>
       <td>{ticker.exchange}</td>
       <td>${ticker.price}</td>
@@ -40,7 +40,7 @@ const TickersItem = ({ ticker }) => {
       <td>{ticker.yield}</td>
       <td>{ticker.last_trade_time}</td>
       <td>
-        <div onClick={onAddToFavorites(ticker)}>
+        <div data-testid="button" onClick={handleOnAddToFavorites}>
           {ticker.is_favorite ? <StarFilled /> : <StarOutlined />}
         </div>
       </td>

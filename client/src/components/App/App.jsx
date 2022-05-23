@@ -1,13 +1,12 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Routes, Route } from 'react-router-dom';
 
 import { fetchTickers } from '../../redux/actions/tickersAction';
 import { fetchFavorites } from '../../redux/actions/favoritesAction';
 
-import { routesConfig } from '../../routes/routesConfig';
 import { socket } from '../../services/socket-api';
 
+import AppRouter from './AppRouter';
 import Header from '../../components/Header';
 
 const App = () => {
@@ -27,11 +26,7 @@ const App = () => {
   return (
     <div className="content">
       <Header />
-      <Routes>
-        {routesConfig.map((route, index) => (
-          <Route key={index} path={route.path} element={route.element} />
-        ))}
-      </Routes>
+      <AppRouter />
     </div>
   );
 };
