@@ -1,14 +1,13 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderTestApp } from '../../helpers/renderTestApp';
+import { renderTestApp } from '../../helpers/test/renderTestApp';
 
 import App from './App';
 
 describe('App component', () => {
   it('renders App component', () => {
     renderTestApp(<App />);
-    screen.debug();
   });
 
   it('routes links', () => {

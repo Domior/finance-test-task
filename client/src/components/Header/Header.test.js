@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 
-import { renderTestApp } from '../../helpers/renderTestApp';
+import { renderTestApp } from '../../helpers/test/renderTestApp';
 
 import Header from './Header';
 

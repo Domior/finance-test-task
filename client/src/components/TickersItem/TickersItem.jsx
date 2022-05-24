@@ -7,7 +7,7 @@ import {
   StarFilled,
 } from '@ant-design/icons';
 
-import { setColorIndicator } from '../../utils/utils';
+import { setColorIndicator } from '../../utils/setColorIndicator';
 
 const TickersItem = ({ ticker, onAddToFavorites }) => {
   const handleOnAddToFavorites = () => {
